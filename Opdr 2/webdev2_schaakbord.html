@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schaakbord Rijst Berekening</title>
+</head>
+<body>
+
+    <h1>De Soldaat en de Koning</h1>
+    <p id="output"></p>
+
+    <script>
+        function berekenRijst() {
+            let totaalKorrels = 0;
+            let huidigeKorrels = 1;
+            let veld = 1;
+
+            while (veld <= 64) {
+                totaalKorrels += huidigeKorrels;
+                huidigeKorrels *= 2;
+                veld++;
+            }
+
+            let totaalKilo = totaalKorrels / 50000;
+            let aantalVrachtwagens = totaalKilo / 40000;
+            let fileLengte = aantalVrachtwagens * 20;
+            let omAarde = fileLengte / 40000;
+
+            totaalKorrels = Math.round(totaalKorrels);
+            totaalKilo = Math.round(totaalKilo);
+            aantalVrachtwagens = Math.round(aantalVrachtwagens);
+            fileLengte = Math.round(fileLengte);
+            omAarde = Math.round(omAarde * 100) / 100;
+
+            document.getElementById("output").innerHTML = `
+                <p>Totale rijstkorrels: ${totaalKorrels}</p>
+                <p>Dat is ongeveer ${totaalKilo} kilo rijst.</p>
+                <p>Daarvoor heb je ${aantalVrachtwagens} vrachtwagens nodig.</p>
+                <p>De file met vrachtwagens is ${fileLengte} km lang.</p>
+                <p>Dat past ${omAarde} keer om de aarde.</p>
+            `;
+        }
+
+        berekenRijst();
+    </script>
+
+</body>
+</html>

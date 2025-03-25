@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webdev1_rekenmachine</title>
+</head>
+<body onload="rekenmachine()">
+    <h1>Rekenmachine</h1>
+    <div id="output"></div>
+
+    <script>
+        function rekenmachine() {
+            let invoer = prompt("Voer een rekensom in (bijv. 44 * 8):");
+            let operator = invoer.includes("+") ? "+" :
+                           invoer.includes("-") ? "-" :
+                           invoer.includes("*") ? "*" :
+                           invoer.includes("/") ? "/" : null;
+
+            if (!operator) {
+                document.getElementById("output").innerHTML = "Ongeldige invoer.";
+                return;
+            }
+
+            let delen = invoer.split(operator);
+            let getal1 = parseFloat(delen[0]);
+            let getal2 = parseFloat(delen[1]);
+
+            let resultaat = operator === "+" ? getal1 + getal2 :
+                            operator === "-" ? getal1 - getal2 :
+                            operator === "*" ? getal1 * getal2 :
+                            getal1 / getal2;
+
+            document.getElementById("output").innerHTML = "Resultaat: " + resultaat;
+        }
+    </script>
+</body>
+</html>

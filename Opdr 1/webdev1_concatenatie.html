@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webdev1_concatenatie</title>
+</head>
+<body onload="optellen()">
+    <h1>Concatenatie van twee getallen</h1>
+    <div id="output"></div>
+
+    <script>
+        function optellen() {
+
+            let getal1 = prompt("Voer het eerste getal in:");
+            let getal2 = prompt("Voer het tweede getal in:");
+
+            let output = "Het gegevenstype van het eerste getal is: " + typeof getal1 + "<br>" + 
+                         "Het gegevenstype van het tweede getal is: " + typeof getal2 + "<br>   ";
+
+            output += "Concatenatie van de twee getallen: " + getal1 + getal2;
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

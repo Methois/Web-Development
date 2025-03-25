@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Rotater</title>
+</head>
+<body>
+
+    <h1>Wisselende Afbeeldingen</h1>
+    <img id="banner" src="/1.jpeg" width="300" height="200" alt="Fruit Banner">
+
+    <script>
+        function bannerRotater() {
+            var plaatjes = ['/1.jpeg', '/2.jpeg', '/3.jpeg'];
+            var teller = 0;
+
+            function draaier() {
+                teller++;
+
+                if (teller === plaatjes.length) {
+                    teller = 0;
+                }
+
+                document.getElementById("banner").src = plaatjes[teller];
+            }
+
+            setInterval(draaier, 2000);
+        }
+
+        bannerRotater();
+    </script>
+
+</body>
+</html>

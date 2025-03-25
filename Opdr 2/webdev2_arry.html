@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webdev 2 - arry</title>
+</head>
+<body>
+    <h1>Array berekenen</h1>
+
+    <script>
+        let regel = prompt("Voer een regel tekst in:");
+        let woorden = regel.split(" ");
+        let output = "";
+
+        for (let i = 0; i < woorden.length; i++) {
+            output += "Woord " + (i + 1) + ": " + woorden[i] + "<br>";
+        }
+
+        output += "<br>Aantal woorden: " + woorden.length;
+        document.body.innerHTML += "<p>" + output + "</p>";
+    </script>
+</body>
+</html>
